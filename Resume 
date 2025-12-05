@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nitil Gupta — Portfolio</title>
+  <meta name="description" content="Portfolio of Nitil Gupta — BCA Student · MERN Intern · Python & Java Developer">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui;
+      background: linear-gradient(180deg, #0c1220, #0a1426 35%, #071021 80%);
+      color: #e6eef6;
+      line-height: 1.65;
+    }
+    .container { max-width: 1100px; margin: 36px auto; padding: 28px; }
+
+    header { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; gap: 16px; align-items: center; }
+    .logo-monogram {
+      font-size: 1.9rem; font-weight: 700; padding: 10px 18px;
+      border-radius: 14px; background: linear-gradient(130deg, var(--accent), #60a5fa);
+      color: #041e22; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    h1 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); margin: 0; font-weight: 600; }
+    .lead { color: var(--muted); margin: 6px 0 0; }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
+
+    main { display: grid; grid-template-columns: 1fr 360px; gap: 28px; margin-top: 28px; }
+    .card {
+      background: var(--card);
+      padding: 20px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+    .accent-border { border-left: 4px solid var(--accent); }
+
+    .fade-in { opacity: 0; transform: translateY(14px); animation: fadeinFormal 0.7s forwards ease-out; }
+    @keyframes fadeinFormal { to { opacity: 1; transform: none; } }
+    .lift:hover { transform: translateY(-4px); transition: 0.28s ease-out; }
+
+    .hero { padding: 24px; border-radius: 14px; background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display: flex; gap: 24px; align-items: center; }
+
+    .cta { display: flex; gap: 12px; margin-top: 18px; }
+    .btn {
+      padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.04);
+      background: transparent; color: inherit; cursor: pointer; font-size: 0.92rem; font-weight: 500;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg, var(--accent), #60a5fa);
+      color: #042022; border: none; font-weight: 600;
+    }
+
+    .projects { display: grid; gap: 12px; }
+    .project {
+      padding: 14px; border-radius: 10px; background: var(--glass-2);
+    }
+    .project h3 { margin: 0 0 6px 0; font-size: 1.1rem; }
+
+    .timeline { display: flex; flex-direction: column; gap: 12px; }
+    .timeline-item {
+      padding: 12px; border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .skills-matrix { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .skill-box {
+      background: rgba(255,255,255,0.04); padding: 14px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .tech-ribbon { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tech-tag {
+      padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.04);
+      font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .socials { display: flex; gap: 12px; margin: 22px 0; }
+    .social-btn {
+      padding: 8px 14px; border-radius: 10px; background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.06); text-decoration: none;
+      color: #e6eef6; font-size: 0.9rem;
+    }
+    .social-btn:hover { background: var(--accent); color: #042022; }
+
+    footer {
+      margin-top: 34px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center; color: var(--muted); font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      main { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; text-align: center; }
+      .cta { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="fade-in">
+    <div class="brand">
+      <div class="logo-monogram">NG</div>
+      <div>
+        <h1>Nitil Gupta</h1>
+        <p class="lead">BCA Student · MERN Intern · Python & Java Developer</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Social -->
+  <div class="socials fade-in">
+    <a href="#" class="social-btn lift">LinkedIn</a>
+    <a href="#" class="social-btn lift">GitHub</a>
+  </div>
+
+  <a href="Nitil_Gupta_Resume.pdf" class="social-btn lift" download style="margin-bottom:10px; background:linear-gradient(90deg,var(--accent),#60a5fa); color:#042022; font-weight:600;">Download Resume</a>
+
+  <main>
+
+    <!-- Left Section -->
+    <section>
+
+      <!-- Hero -->
+      <div class="card hero fade-in lift">
+        <div>
+          <h2>Career Objective</h2>
+          <p>To secure a challenging position as a System Associate at Infosys where I can apply my technical, analytical, and problem-solving skills while enhancing my knowledge in next-generation digital services.</p>
+
+          <div class="cta">
+            <button class="btn primary lift" onclick="document.getElementById('contact').scrollIntoView()">Hire Me</button>
+            <button class="btn lift" onclick="document.getElementById('projects').scrollIntoView()">See Projects</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p class="lead">
+            Email — <span class="code">nitilmonu@gmail.com</span><br>
+            Phone — 6305725828<br>
+            Location — Thummikapalli, Vizianagaram, Andhra Pradesh
+          </p>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div id="projects" class="card accent-border fade-in lift" style="margin-top:18px;">
+        <h2>Projects</h2>
+
+        <div class="projects">
+          <article class="project lift">
+            <h3>Healthcare Awareness – Community Service Project</h3>
+            <p>Conducted awareness campaigns on health practices, preventive care, and community hygiene, demonstrating leadership & communication skills.</p>
+            <div class="meta" style="color:var(--muted); font-size:0.9rem;">Awareness · Community · Leadership</div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div id="experience" class="card accent-border fade-in lift" style="margin-top:18px;">
+        <h2>Experience & Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-item lift">
+            <strong>MERN Stack Intern — Adhoc Network Tech</strong>
+            <div class="meta">May 2025 – July 2025 · MongoDB, Express.js, React.js, Node.js</div>
+          </div>
+
+          <div class="timeline-item lift">
+            <strong>BCA — Aditya Degree College</strong>
+            <div class="meta">2023 — Present · 5th Sem CGPA: 8.1</div>
+          </div>
+
+          <div class="timeline-item lift">
+            <strong>Intermediate — SR Junior College</strong>
+            <div class="meta">CGPA: 9.16</div>
+          </div>
+
+          <div class="timeline-item lift">
+            <strong>10th — OP Jindal Bharati Vidya Mandir School</strong>
+            <div class="meta">CGPA: 9.7</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card accent-border fade-in lift" style="margin-top:18px;">
+        <h2>Technical Skills</h2>
+
+        <div class="skills-matrix">
+          <div class="skill-box">
+            <h4>Programming</h4>
+            <p>C, Java (Basics), Python</p>
+          </div>
+
+          <div class="skill-box">
+            <h4>Web</h4>
+            <p>HTML, MERN Stack</p>
+          </div>
+
+          <div class="skill-box">
+            <h4>Database</h4>
+            <p>DBMS</p>
+          </div>
+
+          <div class="skill-box">
+            <h4>Certifications</h4>
+            <p>Mepro, Cisco C, Cisco Python, MERN, HTML5, Python</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strengths -->
+      <div class="card accent-border fade-in lift" style="margin-top:18px;">
+        <h2>Strengths</h2>
+        <ul style="color: var(--muted); padding-left:20px;">
+          <li>Confident and proactive learner</li>
+          <li>Optimistic mindset</li>
+          <li>Teamwork & communication</li>
+          <li>Quick learner, detail-oriented</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+
+      <div class="card fade-in">
+        <h3>Tech Stack</h3>
+        <div class="tech-ribbon">
+          <span class="tech-tag">MERN</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">DBMS</span>
+          <span class="tech-tag">Git</span>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div id="contact" class="card accent-border fade-in lift" style="margin-top:16px;">
+        <h3>Send Message</h3>
+
+        <form action="mailto:nitilmonu@gmail.com" method="post" enctype="text/plain">
+          <label>Name</label>
+          <input required>
+
+          <label>Email</label>
+          <input type="email" required>
+
+          <label>Message</label>
+          <textarea required></textarea>
+
+          <button class="btn primary lift" style="width:100%; margin-top:12px;">Send Message</button>
+        </form>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nitil Gupta. Built with HTML & CSS.</p>
+  </footer>
+
+</div>
+</body>
+</html>
